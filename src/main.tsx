@@ -15,7 +15,9 @@ import App from "@/App";
 ReactDOM.render(
 	// * react严格模式
 	// <React.StrictMode>
+	// Provider：全局提供 store
 	<Provider store={store}>
+		{/* PersistGate：做数据持久化 */}
 		<PersistGate persistor={persistor}>
 			<App />
 		</PersistGate>

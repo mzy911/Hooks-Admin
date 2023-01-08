@@ -32,7 +32,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 // 使用 redux 中间件
 const middleWares = applyMiddleware(reduxThunk, reduxPromise);
 
-// 创建 store
+// 创建 store：参数1-reducers、参数2-中间件
 const store: Store = createStore(persistReducerConfig, composeEnhancers(middleWares));
 
 // 创建持久化 store

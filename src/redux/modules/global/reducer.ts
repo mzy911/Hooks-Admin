@@ -28,18 +28,23 @@ const globalState: GlobalState = {
 const global = (state: GlobalState = globalState, action: AnyAction) =>
 	produce(state, draftState => {
 		switch (action.type) {
+			// 设置token
 			case types.SET_TOKEN:
 				draftState.token = action.token;
 				break;
+			// 设置页面大小
 			case types.SET_ASSEMBLY_SIZE:
 				draftState.assemblySize = action.assemblySize;
 				break;
+			// 设置语言
 			case types.SET_LANGUAGE:
 				draftState.language = action.language;
 				break;
+			// 主题配置
 			case types.SET_THEME_CONFIG:
 				draftState.themeConfig = action.themeConfig;
 				break;
+			// 返回默认配置
 			default:
 				return draftState;
 		}
