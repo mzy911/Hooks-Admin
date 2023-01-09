@@ -14,15 +14,22 @@ const LayoutHeader = () => {
 	return (
 		<Header>
 			<div className="header-lf">
+				{/* 展开、收缩 */}
 				<CollapseIcon />
+				{/* 面包屑 */}
 				<BreadcrumbNav />
 			</div>
 			<div className="header-ri">
+				{/* 动态调整button大小 */}
 				<AssemblySize />
+				{/* 国际化 */}
 				<Language />
+				{/* 主题配置/ */}
 				<Theme />
+				{/* 全屏 */}
 				<Fullscreen />
 				<span className="username">Hooks</span>
+				{/* 个人信息 */}
 				<AvatarIcon />
 			</div>
 		</Header>

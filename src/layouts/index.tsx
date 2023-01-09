@@ -45,8 +45,10 @@ const LayoutIndex = (props: any) => {
 			</Sider>
 			<Layout>
 				<LayoutHeader></LayoutHeader>
+				{/* 历史访问页页面 tab */}
 				<LayoutTabs></LayoutTabs>
 				<Content>
+					{/* 主题内容 */}
 					<Outlet></Outlet>
 				</Content>
 				<LayoutFooter></LayoutFooter>

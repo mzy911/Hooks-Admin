@@ -96,7 +96,6 @@ const LayoutMenu = (props: any) => {
 		if (route.isLink) window.open(route.isLink, "_blank");
 		navigate(key);
 	};
-
 	return (
 		<div className="menu">
 			<Spin spinning={loading} tip="Loading...">

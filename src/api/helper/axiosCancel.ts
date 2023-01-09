@@ -15,26 +15,25 @@ export class AxiosCanceler {
 	 * @param {Object} config
 	 */
 	addPending(config: AxiosRequestConfig) {
-		// * 在请求开始前，对之前的请求做检查取消操作
+		// * 在请求开始前，对之前的请求做检查、取消相同的上次操作
 		this.removePending(config);
 		const url = getPendingUrl(config);
 		config.cancelToken =
 			config.cancelToken ||
 			new axios.CancelToken(cancel => {
+				// 如果 pending 中不存在当前请求，则添加进去
 				if (!pendingMap.has(url)) {
-					// 如果 pending 中不存在当前请求，则添加进去
 					pendingMap.set(url, cancel);
 				}
 			});
 	}
 
 	/**
-	 * @description: 移除请求
+	 * @description: 移除上次请求，触发新的请求
 	 * @param {Object} config
 	 */
 	removePending(config: AxiosRequestConfig) {
 		const url = getPendingUrl(config);
-
 		if (pendingMap.has(url)) {
 			// 如果在 pending 中存在当前请求标识，需要取消当前请求，并且移除
 			const cancel = pendingMap.get(url);
