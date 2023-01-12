@@ -15,7 +15,7 @@ const LayoutIndex = (props: any) => {
 	const { Sider, Content } = Layout;
 	const { isCollapse, updateCollapse, setAuthButtons } = props;
 
-	// 获取按钮权限列表
+	// 获取按钮权限列表: {useHooks:{add:true, delete:true}}
 	const getAuthButtonsList = async () => {
 		const { data } = await getAuthorButtons();
 		setAuthButtons(data);

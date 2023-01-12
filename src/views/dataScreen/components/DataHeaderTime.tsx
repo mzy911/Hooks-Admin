@@ -1,8 +1,8 @@
-import { useTimes } from "@/hooks/useTime";
+// import { useTimes } from "@/hooks/useTime";
 const DataHeaderTime = () => {
-	const { time } = useTimes();
+	// const { time } = useTimes();
 
-	return <span className="header-time">当前时间：{time}</span>;
+	return <span className="header-time">当前时间：</span>;
 };
 
 export default DataHeaderTime;

@@ -4,7 +4,7 @@ import { routerArray } from "@/routers";
 import { store } from "@/redux";
 
 /**
- * @description 页面按钮权限 hooks
+ * @description 根据 path 获取按钮级别权限 hooks
  * */
 const useAuthButtons = () => {
 	const { pathname } = useLocation();

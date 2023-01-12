@@ -1,6 +1,7 @@
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 
+// 页面最顶端，页面加载的虚拟进度条
 NProgress.configure({
 	easing: "ease", // 动画方式
 	speed: 500, // 递增进度条的速度

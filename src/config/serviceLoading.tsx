@@ -3,7 +3,7 @@ import Loading from "@/components/Loading";
 
 let needLoadingRequestCount = 0;
 
-// * 显示loading
+// * 数据加载 显示loading
 export const showFullScreenLoading = () => {
 	if (needLoadingRequestCount === 0) {
 		let dom = document.createElement("div");

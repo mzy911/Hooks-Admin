@@ -10,10 +10,12 @@ export const useEcharts = (options: echarts.EChartsCoreOption, data?: any) => {
 	const myChart = useRef<echarts.EChartsType>();
 	const echartsRef = useRef<HTMLDivElement>(null);
 
+	// 缩放窗口、echarts调整大小
 	const echartsResize = () => {
 		echartsRef && myChart?.current?.resize();
 	};
 
+	// 数据变化重新绘制
 	useEffect(() => {
 		if (data?.length !== 0) {
 			myChart?.current?.setOption(options);
@@ -26,6 +28,8 @@ export const useEcharts = (options: echarts.EChartsCoreOption, data?: any) => {
 		}
 		myChart?.current?.setOption(options);
 		window.addEventListener("resize", echartsResize, false);
+
+		// 取消后的操作
 		return () => {
 			window.removeEventListener("resize", echartsResize);
 			myChart?.current?.dispose();

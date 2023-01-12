@@ -1,12 +1,8 @@
 // * Echarts 按需引入
 import * as echarts from "echarts/core";
-import {
-	BarChart,
-	// 系列类型的定义后缀都为 SeriesOption
-	BarSeriesOption,
-	LineChart,
-	LineSeriesOption
-} from "echarts/charts";
+
+// 系列类型的定义后缀都为 SeriesOption
+import { BarChart, BarSeriesOption, LineChart, LineSeriesOption } from "echarts/charts";
 import { LegendComponent } from "echarts/components";
 import {
 	TitleComponent,

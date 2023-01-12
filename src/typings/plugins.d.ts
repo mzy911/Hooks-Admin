@@ -1,3 +1,5 @@
+// 第三方模块
+
 declare module "qs";
 declare module "nprogress";
 declare module "js-md5";

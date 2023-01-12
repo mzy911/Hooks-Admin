@@ -10,11 +10,13 @@ const useTheme = (themeConfig: ThemeConfigProp) => {
 	const initTheme = () => {
 		// 灰色和弱色切换
 		const body = document.documentElement as HTMLElement;
+
+		// 添加滤镜
 		if (!weakOrGray) body.setAttribute("style", "");
 		if (weakOrGray === "weak") body.setAttribute("style", "filter: invert(80%)");
 		if (weakOrGray === "gray") body.setAttribute("style", "filter: grayscale(1)");
 
-		// 切换暗黑模式
+		// 移除自定义属性：data-type
 		let head = document.getElementsByTagName("head")[0];
 		const getStyle = head.getElementsByTagName("style");
 		if (getStyle.length > 0) {
@@ -22,6 +24,8 @@ const useTheme = (themeConfig: ThemeConfigProp) => {
 				if (getStyle[i]?.getAttribute("data-type") === "dark") getStyle[i].remove();
 			}
 		}
+
+		// 添加自定义属性：切换皮肤
 		let styleDom = document.createElement("style");
 		styleDom.dataset.type = "dark";
 		styleDom.innerHTML = isDark ? darkTheme : defaultTheme;

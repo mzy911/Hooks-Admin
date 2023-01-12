@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Table, DatePicker, Button, Space } from "antd";
 import useAuthButtons from "@/hooks/useAuthButtons";
+// import { useTimes } from "@/hooks/useTime";
 
 import "./index.less";
 
@@ -8,6 +9,7 @@ const UseHooks = () => {
 	// 按钮权限
 	const { BUTTONS } = useAuthButtons();
 	const { RangePicker } = DatePicker;
+	// const { time } = useTimes();
 
 	useEffect(() => {
 		console.log(BUTTONS);
@@ -70,7 +72,7 @@ const UseHooks = () => {
 	return (
 		<div className="card content-box">
 			<div className="date">
-				<span>切换国际化的时候看我 😎 ：</span>
+				<span>切换国际化的时候看我😎：</span>
 				<RangePicker />
 			</div>
 			<div className="auth">

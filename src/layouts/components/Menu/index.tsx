@@ -73,10 +73,13 @@ const LayoutMenu = (props: any) => {
 		setLoading(true);
 		try {
 			const { data } = await getMenuList();
+
 			if (!data) return;
 			setMenuList(deepLoopFloat(data));
+
 			// 存储处理过后的所有面包屑导航栏到 redux 中
 			setBreadcrumbList(findAllBreadcrumb(data));
+
 			// 把路由菜单处理成一维数组，存储到 redux 中，做菜单权限判断
 			const dynamicRouter = handleRouter(data);
 			setAuthRouter(dynamicRouter);
@@ -104,11 +107,11 @@ const LayoutMenu = (props: any) => {
 					theme="dark"
 					mode="inline"
 					triggerSubMenuAction="click"
-					openKeys={openKeys}
-					selectedKeys={selectedKeys}
-					items={menuList}
-					onClick={clickMenu}
-					onOpenChange={onOpenChange}
+					openKeys={openKeys} // 展开的菜单
+					selectedKeys={selectedKeys} // 当前选择的菜单
+					items={menuList} // 数据利列表
+					onClick={clickMenu} // 点击选择事件
+					onOpenChange={onOpenChange} // 展开事件
 				></Menu>
 			</Spin>
 		</div>
